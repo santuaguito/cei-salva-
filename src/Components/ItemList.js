@@ -1,11 +1,12 @@
 import { div } from "prelude-ls";
 import { useEffect, useState } from "react";
-import Item from './Item'
+import './img.css';
+import data from './Item.js';
 
 
 const getFetch = new Promise ((resolve)=>{
     setTimeout(()=>{
-        resolve (ItemsData)
+        resolve (data)
     },2000)
 })
 
@@ -21,19 +22,21 @@ const ItemList = () => {
 return(
     <div>
         <div>
-        {ItemsData.map((ItemsData) => <div key={ItemsData.id}>
+        {ItemsData.map((item) => <div key={item.id}>
 
         <div> 
-        {ItemsData.Descripcion}
+        {item.Descripcion}
         </div>
 
         <div> 
-        <img  src = {ItemsData.Imagen} alt="foto"/>
+        {item.Precio}
+        </div>
+
+        <div className="img"> 
+        <img  src = {item.Imagen} alt="foto"/>
         </div>
         
-        <div> 
-        {ItemsData.Precio}
-        </div>
+        
         
 
 

@@ -1,4 +1,4 @@
-import React, { createFactory } from 'react';
+import React from 'react';
 import ItemList from '../Components/ItemList'
 
 function ItemListContainer() {

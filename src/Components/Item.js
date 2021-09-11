@@ -1,4 +1,4 @@
-export const ItemsData =[
+const data =[
     {
     id:1,
     Imagen: "https://i.ibb.co/c8RbKTN/DSCN0597.jpg",
@@ -77,5 +77,6 @@ export const ItemsData =[
 
 ]
 
+export default data
 
 
