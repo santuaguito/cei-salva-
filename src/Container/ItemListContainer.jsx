@@ -1,5 +1,5 @@
 import React, { createFactory } from 'react';
-import ItemList from './Components/ItemList'
+import ItemList from '../Components/ItemList'
 
 function ItemListContainer() {
     return (
@@ -11,5 +11,4 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer
-
 

@@ -1,5 +1,6 @@
 import { div } from "prelude-ls";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import Item from './Item'
 
 
 const getFetch = new Promise ((resolve)=>{
@@ -14,12 +15,13 @@ const ItemList = () => {
     useEffect(()=> {
         getFetch.then (res => setItemsData(res))
     })
-}
+
+
 
 return(
     <div>
         <div>
-        {ItemsData.map((ItemsData) => <div key={ItemsData.id}> <img  src = {ItemsData.Imagen} alt="foto"/>
+        {ItemsData.map((ItemsData) => <div key={ItemsData.id}>
 
         <div> 
         {ItemsData.Descripcion}
@@ -38,6 +40,6 @@ return(
         </div>)}
     </div>
     </div>
-)
+)}
 
 export default ItemList
