@@ -1,38 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import CarWidget from'./CarWidget';
-import './NavBar.css';
+
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+
+import { useCartContext } from './cartContext';
 
 
-function NavBar() {
-    return (
-        <div className = "Navbar">
-            
-            <nav className = "Nav">
-                <Link to = '/'> 
 
-                </Link>   
-                    <ul className = "NavMenu">
-                        <li><button className ="boton"><a href = "Inicio">Inicio</a></button></li>
-                        <link to = '/Productos'> 
-                        <li><button className ="boton"><a href = "Productos">Productos</a></button></li>
-                        </link>
-                        <link to='/Nosotros'>
-                        <li><button className ="boton"><a href = "Nosotros">Nosotros</a></button></li>
-                        </link>
-                        <link to='/Contacto'>
-                        <li><button className ="boton"><a href = "Contacto">Contacto</a></button></li>
-                        </link>
-                    </ul>
-       
-                
-            </nav>
-            
-           <CarWidget/>
-        </div>
-        
-    )
+
+
+export const NavBar = ()=>{
+    const {CarWidget} =useCartContext()
+    return<>
+
+    <Navbar bg="dark" variant="dark">
+        <Container>
+        <Navbar.Brand href="#home">Salva Tienda</Navbar.Brand>
+        <Nav className="me-auto">
+        <Nav.Link href="#/">Home</Nav.Link>
+        <link to= '/remeras'>
+        <Nav.Link href="#link">Remeras</Nav.Link>
+        </link>
+        <link to='/tejidos'>
+        <Nav.Link href="#link">Tejidos</Nav.Link>
+        </link>
+        <link to='/pantalones'>
+        <Nav.Link href="#link">Pantalones</Nav.Link>
+        </link>
     
+        <link to='/cart'>
+            {CarWidget()}
+            Cart
+        </link>
+
+        </Nav>
+        </Container>
+  </Navbar>
+    </>   
 }
 
-export default NavBar
+
+
+
+

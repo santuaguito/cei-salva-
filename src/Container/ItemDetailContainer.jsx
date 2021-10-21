@@ -1,25 +1,19 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { getFetchUno } from '../../Ultil/getMock'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import ItemDetail from './ItemDetail'
 
 
 const ItemDetailContainer = () => {
-    const [prod, setProd] = useState({})
-    const { idDescripcion } = useParams()
-
-    useEffect(() => {
-
-        getFetchUno
-        .then(resp =>  setProd(resp))
-        .catch(err => console.log(err)) 
-    }, [])
-
-    console.log(idDescripcion)
+    const [producto] = useState()
     
+    const [loading, setLoading] = useState(true)
+
+
     return (
         <>
-           <ItemDetail  prod={prod} />
+
+            { loading ? <h2>Cargando...</h2> : <ItemDetail  producto={producto} />  }
+           
         </>
     )
 }
